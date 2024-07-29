@@ -1,11 +1,9 @@
-
-
 # CTS 8a Parity
 
-Provides some useful Combat Test 8(a) features (that were removed in CTS 8b) for Combat Test 8c.
+Provides some useful Combat Test 8(a) features (that were removed in CTS 8b or CTS 8c) for Combat Test 8c.
 
 ### Features
-- None yet! (Bedrock Bridging is planned)
+- 100% Accurate Bedrock Bridging
 
 ### Requirements
 

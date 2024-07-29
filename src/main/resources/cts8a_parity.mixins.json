@@ -4,6 +4,9 @@
   "package": "net.notcoded.cts8a_parity.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "BlockHitResultMixin",
+    "GameRendererMixin",
+    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1
