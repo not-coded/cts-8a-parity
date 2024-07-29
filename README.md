@@ -1,9 +1,18 @@
-# Fabric Example Mod
 
-## Setup
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+# CTS 8a Parity
 
-## License
+Provides some useful Combat Test 8(a) features (that were removed in CTS 8b) for Combat Test 8c.
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+### Features
+- None yet! (Bedrock Bridging is planned)
+
+### Requirements
+
+- Java 21
+- Gradle 8.7
+
+### Build
+- Clone the repository
+    - `git clone https://github.com/not-coded/cts-8a-parity`
+- Run `./gradlew build`

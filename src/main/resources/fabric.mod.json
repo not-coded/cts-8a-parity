@@ -1,36 +1,33 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "cts8a-parity",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "CTS 8a Parity",
+  "description": "Provides some useful Combat Test 8(a) features (that were removed in CTS 8b) for Combat Test 8c.",
   "authors": [
-    "Me!"
+    "NotCoded"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://notcoded.is-a.dev",
+    "sources": "https://github.com/not-coded/cts-8a-parity"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "GPL-3.0",
+  "icon": "assets/cts8a_parity/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "client": [
+      "net.notcoded.cts8a_parity.CTS8aParity"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "cts8a_parity.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.14.21",
     "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
