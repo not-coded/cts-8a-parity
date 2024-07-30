@@ -1,9 +1,6 @@
 package net.notcoded.cts8a_parity.mixin;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.MultiPlayerGameMode;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.HitResult;
 import net.notcoded.cts8a_parity.extensions.BlockHitResultExtensions;
@@ -18,12 +15,12 @@ public class MinecraftMixin {
     @Shadow @Nullable public HitResult hitResult;
 
     @Redirect(method = "continueAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;isAir()Z"))
-    private boolean avoidAttackingWhenBridging(BlockState instance) {
+    private boolean avoidContinueAttackingWhenBridging(BlockState instance) {
         return instance.isAir() && !((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
     }
 
     @Redirect(method = "startAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;isAir()Z"))
-    private boolean avoidAttackingWhenBridging(BlockState instance) {
+    private boolean avoidStartAttackingWhenBridging(BlockState instance) {
         return instance.isAir() && !((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
     }
 }
