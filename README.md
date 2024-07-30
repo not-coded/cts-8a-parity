@@ -5,12 +5,15 @@ Provides some useful Combat Test 8(a) features (that were removed in CTS 8b or C
 ### Features
 - 100% Accurate Bedrock Bridging
 
-### Requirements
+![bedrock bridging showcase](https://github.com/not-coded/cts-8a-parity/raw/main/assets/bedrock-bridging.gif)
+
+### Build Requirements
 
 - Java 21
 - Gradle 8.7
 
 ### Build
+
 - Clone the repository
     - `git clone https://github.com/not-coded/cts-8a-parity`
 - Run `./gradlew build`
