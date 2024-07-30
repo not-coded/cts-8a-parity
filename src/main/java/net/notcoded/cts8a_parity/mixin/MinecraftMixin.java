@@ -17,9 +17,9 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MinecraftMixin {
     @Shadow @Nullable public HitResult hitResult;
 
-    @Redirect(method = "continueAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/multiplayer/MultiPlayerGameMode;continueDestroyBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;)Z"))
-    private boolean avoidAttackingWhenBridging(MultiPlayerGameMode instance, BlockPos blockPos, Direction direction) {
-        return instance.continueDestroyBlock(blockPos, direction) && !((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
+    @Redirect(method = "continueAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;isAir()Z"))
+    private boolean avoidAttackingWhenBridging(BlockState instance) {
+        return instance.isAir() && !((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
     }
 
     @Redirect(method = "startAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;isAir()Z"))
