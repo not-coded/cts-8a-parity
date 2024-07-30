@@ -16,11 +16,11 @@ public class MinecraftMixin {
 
     @Redirect(method = "continueAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;isAir()Z"))
     private boolean avoidContinueAttackingWhenBridging(BlockState instance) {
-        return instance.isAir() && !((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
+        return instance.isAir() || ((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
     }
 
     @Redirect(method = "startAttack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/BlockState;isAir()Z"))
     private boolean avoidStartAttackingWhenBridging(BlockState instance) {
-        return instance.isAir() && !((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
+        return instance.isAir() || ((BlockHitResultExtensions)this.hitResult).isLedgeEdge();
     }
 }
