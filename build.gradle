@@ -12,6 +12,7 @@ base {
 // Repo for CT intermediary mappings
 repositories {
 	maven { url "https://maven.rizecookey.net/" }
+	maven { url = "https://raw.githubusercontent.com/Ascend-Client/ACL-maven/main/" }
 }
 
 dependencies {
@@ -21,6 +22,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	include(implementation "me.betterclient:acl:1.0")
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
 }

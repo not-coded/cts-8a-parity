@@ -7,9 +7,17 @@ import net.minecraft.resources.ResourceLocation;
 
 public class CTS8aParity implements ClientModInitializer {
 	public static boolean enabledBridging = true;
+	public static boolean bridgingAllowed = true;
+
 	@Override
 	public void onInitializeClient() {
-		ClientPlayNetworking.registerGlobalReceiver(new ResourceLocation("c", "update_status"), (client, handler, buf, responseSender) -> enabledBridging = buf.readBoolean());
-		ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> enabledBridging = true);
+		ClientPlayNetworking.registerGlobalReceiver(new ResourceLocation("c", "update_status"), (client, handler, buf, responseSender) -> {
+			bridgingAllowed = buf.readBoolean();
+			if (!bridgingAllowed) enabledBridging = false;
+		});
+		ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
+			enabledBridging = true;
+			bridgingAllowed = true;
+		});
 	}
 }
