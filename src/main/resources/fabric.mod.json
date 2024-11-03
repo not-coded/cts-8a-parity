@@ -23,7 +23,8 @@
   "entrypoints": {
     "client": [
       "net.notcoded.cts8a_parity.CTS8aParity"
-    ]
+    ],
+    "acl": ["net.notcoded.cts8a_parity.AscendClient"]
   },
   "mixins": [
     "cts8a_parity.mixins.json"
